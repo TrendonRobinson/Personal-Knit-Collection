@@ -38,9 +38,9 @@ API
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local RunService = game:GetService("RunService")
 
-local Libraries = require(script.Parent)
+local Library = require(script.Parent)
 
-local Lerp: {} = Libraries.Import('Lerp')
+local Lerp: {} = Library.Import('Lerp')
 
 --// module
 local Particles = {}

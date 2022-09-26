@@ -15,8 +15,8 @@ local Knit = require(game:GetService("ReplicatedStorage").Packages.Knit)
 --// Knit Modules
 -- local PetInformation = require(ReplicatedStorage.Client.Mods.Pets)
 
-local Modules = Knit.Modules
-local Tween = require(Modules.Tween)
+-- local Modules = Knit.Modules
+-- local Tween = require(Modules.Tween)
 
 local Assets = ReplicatedStorage.Assets
 local Pets = Assets.Pets
@@ -272,55 +272,6 @@ function GetCFrames(Target, Root)
 end
 
 
-function PetController:CastPet(Target)
-
-	local Pet = GetPet(self.Pets)
-	local Root = Pet
-	local PetBody = Root.body
-
-	Pet:SetAttribute("Active", true)
-
-	Pet.body.Orientate.Enabled = false
-	Pet.body.Align.Enabled = false
-
-	Root.body.Anchored = true
-	Root.body.CanCollide = false
-	
-	
-	
-	local RetrieveBone = Tween.new(Root.PrimaryPart, 
-		{
-			CFrame = GetCFrames(Target, Root)
-		},
-		2,
-		{
-			Reversing = false
-		}
-	)
-	
-	RetrieveBone:Play()
-	RetrieveBone.Completed:Wait()
-	
-	local Weld = Instance.new('Weld')
-	Weld.Part0 = Target
-	Weld.Part1 = Body
-	Weld.C0 = CFrame.new(Body.Size.X/2, Body.Size.Y/6, 0) --* CFrame.fromEulerAnglesXYZ(0, math.pi/2, 0)
-	Weld.Parent = Target
-	
-	Target.CanCollide = false
-	
-	task.wait(1)
-
-	--Target:SetAttribute('Pet_Count', Target:GetAttribute('Pet_Count')-1)
-
-	Root.body.Anchored = false
-
-	Pet.body.Orientate.Enabled = true
-	Pet.body.Align.Enabled = true
-
-	Pet:SetAttribute("Active", false)
-
-end
 
 function PetController:RemovePet(ID)
 

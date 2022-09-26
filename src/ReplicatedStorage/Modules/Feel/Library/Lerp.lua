@@ -42,13 +42,17 @@ local RunService = game:GetService("RunService")
 local Lerp = {}
 
 
-function Lerp.CFrame(part: BasePart | MeshPart, goal: CFrame, t: number)
+function Lerp.CFrame(part: BasePart | MeshPart | Camera, goal: CFrame, t: number)
     local timepassed: number = 0
     local start: CFrame = part.CFrame
     while timepassed <= t do
         timepassed = timepassed + RunService.RenderStepped:Wait()
         part.CFrame = start:Lerp(goal,timepassed/t)
     end
+end
+
+function Lerp.new(...)
+    Lerp.CFrame(...)
 end
 
 

@@ -48,9 +48,9 @@ end
 
 function PetService:KnitStart()
 	-------------Variables-----------
-	self.Services = {
-		DataService = Knit.GetService('DataService')
-	}
+	-- self.Services = {
+	-- 	DataService = Knit.GetService('DataService')
+	-- }
 	-------------Variables-----------
 	-------------Classes-------------
 

@@ -2,11 +2,12 @@
 
 -- stuff
 
-local Libraries = script.Libraries
+local Library = require(script.Library)
 
 return {
-    Lerp = Libraries.Import('Lerp'),
-    Camera = Libraries.Import('Camera'),
-    Particles =  Libraries.Import('Particles'),
+    Lerp = Library.Import('Lerp'),
+    Spring = Library.Import('Spring'),
+    Camera = Library.Import('Camera'),
+    Particles =  Library.Import('Particles'),
 }
 
