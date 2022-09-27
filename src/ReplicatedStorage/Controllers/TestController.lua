@@ -23,6 +23,8 @@ function TestController:KnitStart()
     local PlayerGui = Player.PlayerGui
 
     local Camera = Feel.Camera
+    local ProtoWrap = Feel.ProtoWrap
+
     local CustomCamera = Camera.new(Player, workspace.CurrentCamera, workspace.Ignorables:GetDescendants())
     -------------Variables-----------
     -------------Classes-------------
@@ -41,6 +43,8 @@ function TestController:KnitStart()
     
     CustomCamera.CurrentSpring.rate = .01
     CustomCamera.CurrentSpring.friction = .5
+
+    ProtoWrap.Wrap(workspace.Wrap:GetChildren())
 
     -- task.wait(10)
     -- Camera.Set(CustomCamera, "Default")

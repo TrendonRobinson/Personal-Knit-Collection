@@ -238,6 +238,11 @@ function Camera.playerInput(key: string | {}, actionName, inputState, inputObjec
 	end
 end
 
+function Camera.Spectate(key: string | {}, Player: Player)
+    local self = Checker(key)
+    
+end
+
 
 function Camera.Connect(key: string | {})
     local self = Checker(key)
